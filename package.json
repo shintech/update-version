@@ -1,0 +1,11 @@
+{
+  "name": "update_version",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/mprather1/update-version",
+  "author": "Michael Prather",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^3.9.0"
+  }
+}
