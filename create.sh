@@ -9,10 +9,8 @@ return 1
 fi
 }
 
-
-
 update_version(){
-if chkarg \$2; then
+if chkarg \$1; then
 /usr/local/bin/node $(pwd)${directory}/bin/update-version/index.js \$1 \$2
 else
 printf '\\nplease provide arguments...\\n\$filename \$version\\n\\n'

@@ -1,6 +1,6 @@
 {
   "name": "update_version",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "repository": "https://github.com/mprather1/update-version",
   "author": "Michael Prather",
