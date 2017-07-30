@@ -1,2 +1,4 @@
 /update-version
 /script.sh
+/node_modules
+*error*

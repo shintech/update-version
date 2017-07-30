@@ -1,19 +1,23 @@
 const yaml = require('js-yaml')
 const fs = require('fs')
-var path = require('path')
-var filename = path.join(process.argv[2], 'version.yml')
-var version = process.argv[3]
+const path = require('path')
+const chalk = require('chalk')
 
-fs.stat(filename, (err, res) => {
+const currentDirectory = process.argv[2]
+const config = path.join(currentDirectory, 'version.yml')
+const version = process.argv[3]
+
+fs.stat(config, (err, res) => {
   if (err) {
     console.log('version.yml not found skipping...')
     return
   }
 
   try {
-    var v = yaml.safeLoad(fs.readFileSync(filename, 'utf8'))
+    const v = yaml.safeLoad(fs.readFileSync(config, 'utf8'))
     v.version = version
-    var y = yaml.safeDump(v, {
+
+    const y = yaml.safeDump(v, {
       'sortkeys': true
     })
 
@@ -26,8 +30,8 @@ fs.stat(filename, (err, res) => {
         console.log('package.json exists...\nskipping version update...\n')
         return false
       } else {
-        console.log(`writing ${version} to version.yml...`)
-        fs.writeFile(filename, y)
+        console.log(`writing ${chalk.green(version)} to version.yml...`)
+        fs.writeFile(config, y)
       }
     })
   } catch (err) {

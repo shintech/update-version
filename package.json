@@ -1,11 +1,38 @@
 {
-  "name": "update_version",
-  "version": "0.0.3",
+  "name": "update-version",
+  "version": "0.0.5",
   "main": "index.js",
-  "repository": "https://github.com/mprather1/update-version",
-  "author": "Michael Prather",
   "license": "MIT",
+  "repository":"https://github.com/mprather1/update-version",
+  "author": "Michael Prather",
+  "scripts": {
+    "start": "node build/server.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-es2015-node6": "^0.4.0",
+    "babel-preset-latest": "^6.22.0",
+    "standard": "^10.0.2"
+  },
   "dependencies": {
+    "chalk": "^2.0.1",
     "js-yaml": "^3.9.0"
+  },
+  "standard": {
+    "globals": [
+      "it",
+      "describe",
+      "beforeEach",
+      "afterEach",
+      "before",
+      "after",
+      "Backbone",
+      "_",
+      "$"
+    ]
+  },
+  "engines": {
+    "node": ">=6"
   }
 }
+ 
